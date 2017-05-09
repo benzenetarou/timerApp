@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="timerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmn-OP-6FY">
+                                <rect key="frame" x="88" y="233.5" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.14695600207948933" green="0.44623763869556243" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6Oh-sF-A6A"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="7Aa-0X-Puc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="H8w-AF-x2q"/>
+                                    <constraint firstAttribute="width" constant="200" id="czF-2y-W3U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimeOrCountUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ev5-oC-aax"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSK-ty-xsE">
+                                <rect key="frame" x="150.5" y="148.5" width="75.5" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G38-6l-796">
+                                <rect key="frame" x="165" y="544" width="48" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82438066710000002" green="0.25248618540000001" blue="0.25322292829999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="Retry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gzx-V9-2s9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hSK-ty-xsE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Apv-zd-d4I"/>
+                            <constraint firstItem="nmn-OP-6FY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GUE-7H-Pfa"/>
+                            <constraint firstItem="nmn-OP-6FY" firstAttribute="top" secondItem="hSK-ty-xsE" secondAttribute="bottom" constant="50" id="Zde-cZ-Zuc"/>
+                            <constraint firstItem="nmn-OP-6FY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dgO-lI-xrg"/>
+                            <constraint firstItem="hSK-ty-xsE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fV7-YS-eSL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="retryButton" destination="G38-6l-796" id="rNx-uZ-35Z"/>
+                        <outlet property="tapButton" destination="nmn-OP-6FY" id="PC6-q6-Xdd"/>
+                        <outlet property="timerLabel" destination="hSK-ty-xsE" id="W00-Z5-fex"/>
+                    </connections>
+                </viewController>
+            </objects>
+        </scene>
+    </scenes>
+</document>
